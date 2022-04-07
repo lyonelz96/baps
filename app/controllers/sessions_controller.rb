@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
   def create
-    render json: request.env['omniauth.auth']
+    session[:user] = request.env['omniauth.auth'].except(:extra)
   end
 end
