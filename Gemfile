@@ -75,3 +75,5 @@ group :test do
 end
 
 gem "figaro", "~> 1.2"
+
+gem "omniauth-spotify", "~> 0.0.13"
