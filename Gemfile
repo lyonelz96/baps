@@ -79,3 +79,5 @@ gem "figaro", "~> 1.2"
 gem "omniauth-spotify", "~> 0.0.13"
 
 gem "omniauth-rails_csrf_protection", "~> 1.0"
+
+gem "http", "~> 5.0"
