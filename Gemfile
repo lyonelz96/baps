@@ -77,3 +77,5 @@ end
 gem "figaro", "~> 1.2"
 
 gem "omniauth-spotify", "~> 0.0.13"
+
+gem "omniauth-rails_csrf_protection", "~> 1.0"
