@@ -6,6 +6,6 @@ class StaticPagesController < ApplicationController
   private
 
   def user_signed_in?
-    redirect_to dashboard_path if session[:user]
+    redirect_to dashboard_path if current_user
   end
 end

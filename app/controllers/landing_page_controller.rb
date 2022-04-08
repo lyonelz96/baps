@@ -10,7 +10,7 @@ class LandingPageController < ApplicationController
   private
 
   def require_login
-    redirect_to root_path if session[:user].nil?
+    redirect_to root_path if current_user.nil?
   end
 
   def followed_artists
