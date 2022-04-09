@@ -5,6 +5,7 @@ class LandingPageController < ApplicationController
 
   def dashboard
     @user = current_user
+    @artists = followed_artists
   end
 
   private

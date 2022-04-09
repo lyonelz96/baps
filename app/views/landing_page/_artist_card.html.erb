@@ -1,0 +1,26 @@
+<div class="column is-one-fifth">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-header-title">
+        <%= artist["name"] %>
+      </div>
+    </div>
+
+    <div class="card-image">
+      <figure class="image is-square">
+        <img src="<%= artist["images"].first["url"] %>" alt="Artist Image">
+      </figure>
+    </div>
+
+    <div class="card-content">
+      <%= artist["followers"]["total"] %> Followers
+      <p>Content</p>
+    </div>
+
+    <div class="card-footer">
+      <div class="card-footer-item">
+        Listen on Spotify
+      </div>
+    </div>
+  </div>
+</div>
