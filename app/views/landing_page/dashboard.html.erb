@@ -1,3 +1,27 @@
-<div class="columns is-multiline">
-  <%= render partial: "artist_card", collection: @artists, as: :artist %>
+<div class="container is-fluid">
+  <nav class="level">
+    <div class="level-left">
+      <div class="level-item">
+        <p class="title is-1">My Artists</p>
+      </div>
+      <div class="level-item">
+        <input class="input" type="text" placeholder="Find an artist (Fuzzy Search)">
+      </div>
+      <div class="level-item">
+        <div class="select">
+          <select>
+            <option>Sort By: Spotify Default</option>
+            <option>Sort By: Alphabetically ASC</option>
+            <option>Sort By: Alphabetically DESC</option>
+            <option>Sort By: Followers ASC</option>
+            <option>Sort By: Followers DESC</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="columns is-multiline">
+    <%= render partial: "artist_card", collection: @artists, as: :artist %>
+  </div>
 </div>
