@@ -1,4 +1,4 @@
-<div class="container is-fluid" data-controller="artist-sort">
+<div class="container is-fluid" data-controller="artist-sort fuzzy-search">
   <p class="title is-1">BAPS</p>
   <p class="subtitle">Better Artist Page Spotify</p>
 
@@ -10,7 +10,7 @@
         <p class="title is-1">My Artists</p>
       </div>
       <div class="level-item">
-        <input class="input" type="text" placeholder="Find an artist (Fuzzy Search)">
+        <input class="input" type="text" placeholder="Find an artist (Fuzzy Search)" data-action="fuzzy-search#search" data-fuzzy-search-target="input">
       </div>
       <div class="level-item">
         <div class="select">
@@ -29,7 +29,7 @@
     </div>
   </nav>
 
-  <div class="columns is-multiline" data-artist-sort-target="columns">
+  <div class="columns is-multiline" data-artist-sort-target="columns" data-fuzzy-search-target="artist_cards">
     <%= render partial: "artist_card", collection: @artists, as: :artist %>
   </div>
 </div>

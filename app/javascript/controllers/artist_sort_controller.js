@@ -5,7 +5,9 @@ export default class extends Controller {
     static targets = ['columns', 'select']
 
     initialize() {
-        if (this.hasColumnsTarget) this.default_sort = [...this.columnsTarget.children]
+        if (this.hasColumnsTarget) {
+            this.default_sort = [...this.columnsTarget.children]
+        }
     }
 
     connect() {
