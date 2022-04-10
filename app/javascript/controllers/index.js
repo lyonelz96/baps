@@ -7,5 +7,8 @@ import { application } from "./application"
 import ArtistSortController from "./artist_sort_controller.js"
 application.register("artist-sort", ArtistSortController)
 
+import FuzzySearchController from "./fuzzy_search_controller.js"
+application.register("fuzzy-search", FuzzySearchController)
+
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
