@@ -12,14 +12,13 @@
       </figure>
     </div>
 
-    <div class="card-content has-text-justified">
+    <div class="card-content has-text-centered">
       <%= number_with_delimiter(artist["followers"]["total"]) %> Followers
-      <p>Content</p>
     </div>
 
     <div class="card-footer">
       <div class="card-footer-item">
-        Listen on Spotify
+        <a href="<%= artist["external_urls"]["spotify"]%>" target="_blank">Spotify</a>
       </div>
     </div>
   </div>
