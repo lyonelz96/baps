@@ -1,4 +1,9 @@
 <div class="container is-fluid">
+  <p class="title is-1">BAPS</p>
+  <p class="subtitle">Better Artist Page Spotify</p>
+
+  <p class="subtitle">Welcome, <%= @user['info']['name'] %></p>
+
   <nav class="level">
     <div class="level-left">
       <div class="level-item">
@@ -17,6 +22,9 @@
             <option>Sort By: Followers DESC</option>
           </select>
         </div>
+      </div>
+      <div class="level-item">
+        <%= button_to "Logout", sign_out_path, method: :get, class: 'button' %>
       </div>
     </div>
   </nav>
