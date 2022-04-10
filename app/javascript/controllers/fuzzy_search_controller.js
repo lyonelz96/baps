@@ -3,10 +3,10 @@ import Fuse from "fuse.js"
 
 // Connects to data-controller="fuzzy-search"
 export default class extends Controller {
-    static targets = ['input', 'artist_cards']
+    static targets = ['artistCards']
 
     initialize() {
-        this.initial_artists_cards = [...this.artist_cardsTarget.children]
+        this.initial_artists_cards = [...this.artistCardsTarget.children]
         this.artists_objs = this.initial_artists_cards.map(c => {
             return {
                 el: c,
@@ -17,7 +17,7 @@ export default class extends Controller {
 
     search(event) {
         if (event.target.value === '') {
-            this.artist_cardsTarget.replaceChildren(...this.initial_artists_cards)
+            this.artistCardsTarget.replaceChildren(...this.initial_artists_cards)
         }
         else {
             const fuse = new Fuse(this.artists_objs, {
@@ -27,7 +27,7 @@ export default class extends Controller {
 
             const results = fuse.search(event.target.value)
 
-            this.artist_cardsTarget.replaceChildren(...results.map(artist => {
+            this.artistCardsTarget.replaceChildren(...results.map(artist => {
                 return artist.item.el
             }))
         }

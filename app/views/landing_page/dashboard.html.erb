@@ -10,7 +10,12 @@
         <p class="title is-1">My Artists</p>
       </div>
       <div class="level-item">
-        <input class="input" type="text" placeholder="Find an artist (Fuzzy Search)" data-action="fuzzy-search#search" data-fuzzy-search-target="input">
+        <input class="input" 
+               type="text" 
+               placeholder="Find an artist (Fuzzy Search)" 
+               data-action="fuzzy-search#search artist-sort#artistsSortSearch"
+               data-artist-sort-target="search"
+               >
       </div>
       <div class="level-item">
         <div class="select">
@@ -29,7 +34,7 @@
     </div>
   </nav>
 
-  <div class="columns is-multiline" data-artist-sort-target="columns" data-fuzzy-search-target="artist_cards">
+  <div class="columns is-multiline" data-artist-sort-target="artistCards" data-fuzzy-search-target="artistCards">
     <%= render partial: "artist_card", collection: @artists, as: :artist %>
   </div>
 </div>

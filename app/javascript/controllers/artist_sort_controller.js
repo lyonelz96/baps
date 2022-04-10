@@ -2,23 +2,30 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="artist-sort"
 export default class extends Controller {
-    static targets = ['columns', 'select']
+    static targets = ['artistCards', 'select', 'search']
 
     initialize() {
-        if (this.hasColumnsTarget) {
-            this.default_sort = [...this.columnsTarget.children]
+        this.selectTarget.value = 'default'
+
+        if (this.hasArtistCardsTarget) {
+            this.default_sort = [...this.artistCardsTarget.children]
         }
     }
 
-    connect() {
+    artistsSortSearch() {
+        if (this.selectTarget.value === 'default') return
+
         this.artistsSort(null, this.selectTarget.value)
     }
 
     artistsSort(event, val) {
         let sort_opt = val || event.target.value
-        let artists = [...this.default_sort]
+        let artists = [...this.artistCardsTarget.children]
 
-        if (sort_opt === 'alphabetical-asc') {
+        if (sort_opt === 'default' && this.searchTarget.value === '') {
+            artists = [...this.default_sort]
+        }
+        else if (sort_opt === 'alphabetical-asc') {
             this.alphabeticalSort(artists)
         }
         else if (sort_opt === 'alphabetical-desc') {
@@ -31,7 +38,7 @@ export default class extends Controller {
             this.followersSort(artists, true)
         }
 
-        this.columnsTarget.replaceChildren(...artists)
+        this.artistCardsTarget.replaceChildren(...artists)
     }
 
     alphabeticalSort(items, reverse = false) {
