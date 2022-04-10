@@ -2,7 +2,9 @@
   <div class="card">
     <div class="card-header">
       <div class="card-header-title">
-        <%= artist["name"] %>
+        <span class="artist-name">
+          <%= artist["name"] %>
+        </span>
       </div>
     </div>
 
@@ -13,7 +15,9 @@
     </div>
 
     <div class="card-content has-text-centered">
-      <%= number_with_delimiter(artist["followers"]["total"]) %> Followers
+      <span class="artist-followers">
+        <%= number_with_delimiter(artist["followers"]["total"]) %> Followers
+      </span>
     </div>
 
     <div class="card-footer">
