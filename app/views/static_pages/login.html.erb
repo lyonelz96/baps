@@ -3,7 +3,11 @@
     <div class="has-text-centered">
       <p class="title is-size-1">BAPS</p>
       <p class="subtitle is-size-5">Better Artist Page Spotify</p>
-      <%= button_to "Login", "/auth/spotify", method: :post, class: "button is-medium" %>
+      <%= button_to "Login", 
+        "/auth/spotify", 
+        method: :post, 
+        class: "button is-medium", 
+        data: {turbo: false} %>
     </div>
   </div>
 </div>
