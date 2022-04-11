@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ArtistCountController from "./artist_count_controller.js"
+application.register("artist-count", ArtistCountController)
+
 import ArtistSortController from "./artist_sort_controller.js"
 application.register("artist-sort", ArtistSortController)
 

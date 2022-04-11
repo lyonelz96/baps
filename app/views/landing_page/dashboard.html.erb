@@ -33,6 +33,7 @@
       </div>
     </div>
   </nav>
+  <p class="subtitle has-text-grey"><%= @artists.length %> Artists</p>
 
   <div class="columns is-multiline" data-artist-sort-target="artistCards" data-fuzzy-search-target="artistCards">
     <%= render partial: "artist_card", collection: @artists, as: :artist %>
