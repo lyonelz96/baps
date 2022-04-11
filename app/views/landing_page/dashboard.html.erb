@@ -1,4 +1,5 @@
-<div class="container is-fluid" data-controller="artist-sort fuzzy-search">
+<div class="container is-fluid" 
+  data-controller="artist-sort fuzzy-search artist-count">
   <p class="title is-1">BAPS</p>
   <p class="subtitle">Better Artist Page Spotify</p>
 
@@ -13,13 +14,14 @@
         <input class="input" 
                type="text" 
                placeholder="Find an artist (Fuzzy Search)" 
-               data-action="fuzzy-search#search artist-sort#artistsSortSearch"
+               data-action="fuzzy-search#search artist-sort#artistsSortSearch artist-count#updateCount"
                data-artist-sort-target="search"
                >
       </div>
       <div class="level-item">
         <div class="select">
-          <select data-action="artist-sort#artistsSort" data-artist-sort-target="select">
+          <select data-action="artist-sort#artistsSort" 
+            data-artist-sort-target="select">
             <option value="default">Sort By: Spotify Default</option>
             <option value="alphabetical-az">Sort By: Alphabetically A-Z</option>
             <option value="alphabetical-za">Sort By: Alphabetically Z-A</option>
@@ -33,9 +35,18 @@
       </div>
     </div>
   </nav>
-  <p class="subtitle has-text-grey"><%= @artists.length %> Artists</p>
+  <p class="subtitle has-text-grey">
+    <span data-artist-count-target="count">
+      <%= @artists.length %>
+    </span>
+    Artists
+  </p>
 
-  <div class="columns is-multiline" data-artist-sort-target="artistCards" data-fuzzy-search-target="artistCards">
+  <div class="columns is-multiline" 
+       data-artist-sort-target="artistCards" 
+       data-fuzzy-search-target="artistCards"
+       data-artist-count-target="artistCards"
+       >
     <%= render partial: "artist_card", collection: @artists, as: :artist %>
   </div>
 </div>
