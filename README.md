@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+[Music icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/music "music icons")
