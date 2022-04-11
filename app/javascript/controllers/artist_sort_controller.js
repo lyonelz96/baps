@@ -25,16 +25,16 @@ export default class extends Controller {
         if (sort_opt === 'default' && this.searchTarget.value === '') {
             artists = [...this.default_sort]
         }
-        else if (sort_opt === 'alphabetical-asc') {
+        else if (sort_opt === 'alphabetical-az') {
             this.alphabeticalSort(artists)
         }
-        else if (sort_opt === 'alphabetical-desc') {
+        else if (sort_opt === 'alphabetical-za') {
             this.alphabeticalSort(artists, true)
         }
-        else if (sort_opt === 'followers-asc') {
+        else if (sort_opt === 'followers-lohi') {
             this.followersSort(artists)
         }
-        else if (sort_opt === 'followers-desc') {
+        else if (sort_opt === 'followers-hilo') {
             this.followersSort(artists, true)
         }
 
